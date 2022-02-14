@@ -1,0 +1,15 @@
+{% extends "./_boardLayout.html" %}
+{% block container %}
+<div id="container">
+    <h2>VIEW</h2>
+    <ul>
+        <li>제목 : {{item.subject}}</li>
+        <li>작성자 : {{item.username}}</li>
+        <li>작성일 : {{item.date}}</li>
+    </ul>
+    <a href="/board/list">목록가기</a>
+    <a href="/board/delete?index={{index}}">삭제하기</a>
+    <a href="/board/update?index={{index}}">수정하기</a>
+
+</div>
+{% endblock %}
