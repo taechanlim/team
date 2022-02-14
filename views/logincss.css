@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+#wrap{
+    width:100%;
+}
+#header{
+    width:800px;
+    margin:0 auto;
+}
+#logo{
+    position:relative;
+    top:50px;
+    left:250px;
+}
+#logo > a{
+   font-size: 80px;
+}
+#header > h3{
+    font-size: 30px;
+    position:relative;
+    top:80px;
+    left:260px;
+}
+#formbox{
+    width:300px;
+    height:300px;
+    display:flex;
+}
+#formbox > form{
+    position:relative;
+    top:150px;
+    left:190px;
+}
+#formbox > form > ul >li {
+    padding:20px;
+}
+#formbox > form > ul >li > input{
+    width:300px;
+    height:30px;
+}
