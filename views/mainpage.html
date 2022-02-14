@@ -12,6 +12,19 @@
         <div id="header">
             <h1 id="logo"><a href="/">LOGO</a></h1>
             <h3>메인 페이지</h3>
+
+            <ul>
+                {% if user %}
+                <li>{{user.username}}님 환영합니다.</li>
+                <li><a href="/user/profile">프로필페이지</a></li>
+                <li><a href="/user/logout">로그아웃</a></li>
+                {% else %}
+                <li><a href="/user/login">로그인</a></li>
+                {% endif %}
+                <li><a href="/board/list">게시판</a></li>
+            </ul>
+            {% endblock %}
+            
         </div>
     </div>
 </body>
