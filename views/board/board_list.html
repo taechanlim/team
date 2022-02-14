@@ -1,0 +1,23 @@
+{% extends "./_boardLayout.html" %}
+{% block container %}
+<div id="container">
+    <h2>BOARD</h2>
+    <table>
+        <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+        </tr>
+        {% for item in list %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{item.subject}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/board/write">글쓰기</a>
+</div>
+{% endblock %}
