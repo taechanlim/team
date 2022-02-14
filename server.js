@@ -1,10 +1,10 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
-const Meomorystore = require(`memorystore`)(session)
 const session = require(`express-session`)
+const Memorystore = require(`memorystore`)(session)
 
-const list = require('./boardData')
-const data = list.data
+// const list = require('./boardData')
+// const data = list.data
 
 const router = require(`./routes`)
 const app = express()
@@ -16,22 +16,23 @@ nunjucks.configure('views', {
 })
 
 
-const maxAge = 60*60*1000
+const maxAge = 60 * 60 * 1000
 const sessionObj = {
-    secret:`1234`,
+    secret: `1234`,
     unsave: false,
-    savaUninitilized:true,
-    store : new Meomorystore({checkPeriod:true}),
-    cookie : {
+    savaUninitilized: true,
+    store: new Memorystore({ checkPeriod: true }),
+    cookie: {
         maxAge,
     }
 }
 
 
 app.use(session(sessionObj))
-app.use(router)
 app.use(express.urlencoded({ extended: true, }))
+app.use(router)
 
-app.listen(3000, () => {
+
+app.listen(3001, () => {
     console.log('server start')
 })
